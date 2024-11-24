@@ -11,6 +11,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 python-bitcoinrpc = "^1.0"
+python-bitcoinlib = "^0.12.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"

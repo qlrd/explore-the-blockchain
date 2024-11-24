@@ -48,3 +48,20 @@ jobs:
           else
             exit 1
           fi
+
+  rust:
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup
+        id: setup
+        run: bash ./submission/setup.sh
+
+      - name: Setup rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        
+      - name: Run test
+        run: cargo test
+    

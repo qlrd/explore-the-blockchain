@@ -223,6 +223,17 @@ spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
 
 [[package]]
+name = "python-bitcoinlib"
+version = "0.12.2"
+description = "The Swiss Army Knife of the Bitcoin protocol."
+optional = false
+python-versions = "*"
+files = [
+    {file = "python-bitcoinlib-0.12.2.tar.gz", hash = "sha256:c65ab61427c77c38d397bfc431f71d86fd355b453a536496ec3fcb41bd10087d"},
+    {file = "python_bitcoinlib-0.12.2-py3-none-any.whl", hash = "sha256:2f29a9f475f21c12169b3a6cc8820f34f11362d7ff1200a5703dce3e4e903a44"},
+]
+
+[[package]]
 name = "python-bitcoinrpc"
 version = "1.0"
 description = "Enhanced version of python-jsonrpc for use with Bitcoin"
@@ -308,4 +319,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "727033f7156df7195e23acbbd8a8cfba25694ec9b9a2eac4a4e7b7dbc3fcd7a7"
+content-hash = "79303f6496c3584b3d3c481af65e1ecb1e3fb58287179e6d88c9effcbcdceeea"
