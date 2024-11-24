@@ -23,6 +23,7 @@ jobs:
         run: pipx install poetry
       
       - uses: actions/setup-python@v5
+        working-directory: ./submission_in_python
         with:
           python-version: '3.12'
           cache: 'poetry'
@@ -30,24 +31,20 @@ jobs:
           architecture: x64
 
       - name: Install poetry dependencies
+        working-directory: ./submission_in_python
         run: poetry install
 
       - name: Black
-        id: black
-        run: cd python && poetry run poe format --check-verbose && cd ..
+        working-directory: ./submission_in_python
+        run: poetry run poe format --check-verbose
 
       - name: Pylint
-        id: lint
-        run: cd python && poetry run poe lint && cd ..
-
-      - name: What is the hash of block 654,321 (python)?
-        run: |
-          output=$(cd python && poetry run poe submission_001 && cd..)
-          if [[ $output == "000000000000000000058452bbe379ad4364fe8fda68c45e299979b492858095" ]]; then
-            exit 0
-          else
-            exit 1
-          fi
+        working-directory: ./submission_in_python
+        run: poetry run poe lint
+      
+      - name: Pytest
+        working-directory: ./submission_in_python
+        run: poetry run poe test
 
   rust:
     
@@ -66,8 +63,5 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@v1
         
       - name: Build
+        working-directory: ./submission_in_rust
         run: cargo test
-        
-      - name: Run test
-        run: cd submission_in_rust/ && cargo test && cd ..
-    
