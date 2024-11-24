@@ -32,11 +32,11 @@ jobs:
       - name: Install poetry dependencies
         run: poetry install
 
-      - black:
+      - name: Black
         id: black
         run: cd python && poetry run poe format --check-verbose && cd ..
 
-      - pylint:
+      - name: Pylint
         id: lint
         run: cd python && poetry run poe lint && cd ..
 
