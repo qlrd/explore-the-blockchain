@@ -69,5 +69,5 @@ jobs:
         run: cargo test
         
       - name: Run test
-        run: cd submission_in_rut && cargo test && cd ..
+        run: cd submission_in_rust/ && cargo test && cd ..
     
