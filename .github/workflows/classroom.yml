@@ -65,6 +65,9 @@ jobs:
       - name: Setup rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         
-      - name: Run test
+      - name: Build
         run: cargo test
+        
+      - name: Run test
+        run: cd submission_in_rut && cargo test && cd ..
     
