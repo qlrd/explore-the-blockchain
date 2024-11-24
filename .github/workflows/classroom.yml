@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'poetry'
-          cache-dependency-path: './poetry.lock'
+          cache-dependency-path: './submission_in_python/poetry.lock'
           architecture: x64
 
       - name: Install poetry dependencies
